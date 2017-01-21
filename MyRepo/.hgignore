@@ -1,0 +1,5 @@
+syntax: glob
+Library/
+MyRepo-csharp.sln
+MyRepo.sln
+MyRepo.userprefs

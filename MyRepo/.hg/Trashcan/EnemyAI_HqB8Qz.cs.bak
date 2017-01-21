@@ -1,0 +1,83 @@
+﻿using UnityEngine;
+using System.Collections;
+
+
+public class EnemyAI : MonoBehaviour
+{
+	public float movSpeed;
+	public float padding;
+	Transform player; 
+	Transform thisTransform;
+	private int enemyHealth = 100000;
+	bool gettingPunched = false; 
+	float time = 0f; 
+	int numberOfPunches = 0; 
+	
+	void Start() { 
+		thisTransform = this.GetComponent<Transform> ();
+		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform> (); 
+	}
+	
+	void FixedUpdate () {
+		if (thisTransform.position.z < player.position.z-padding &&
+		    Mathf.Abs (this.transform.position.z - player.position.z-padding) > 2) {
+			Vector3 temp = thisTransform.position;
+			temp.z += movSpeed;
+			thisTransform.position = temp;
+		}
+		else if (thisTransform.position.z > player.position.z+padding &&
+		         Mathf.Abs (this.transform.position.z - player.position.z-padding) > 2) {
+			Vector3 temp = thisTransform.position;
+			temp.z -= movSpeed;
+			thisTransform.position = temp;
+		}
+	}
+
+	void OnTriggerEnter(Collider col)
+	{
+		enemyHealth = enemyHealth - 10; 
+		numberOfPunches++; 
+		Debug.Log ("punched " + numberOfPunches);
+	}
+
+	void Update () {
+		time += Time.deltaTime; 
+		//		if (Mathf.Abs (this.transform.position.z - player.position.z) <= 3) {
+		//			float randomNumber = Random.value * 100f;
+		//			if(randomNumber >= 1 && randomNumber < 2)
+		//			{
+		//				Debug.Log("Jumping");
+		//				Vector3 temp = thisTransform.position;
+		//				temp.y += movSpeed * 2;
+		//				thisTransform.position = temp;
+		//			}
+		//		}
+		if (enemyHealth <= 0) {
+			Destroy (this.gameObject);
+		}
+		if(time > 1f)
+		{
+		   if(numberOfPunches > 3)
+			{
+				Debug.Log ("AI is punched"); 
+				if(this.transform.position.z < player.position.z)
+				{
+					Vector3 temp = thisTransform.position;
+					temp.z -= movSpeed*30; 
+					thisTransform.position = temp;
+				}
+				else 
+				{
+					Vector3 temp = thisTransform.position;
+					temp.z += movSpeed*30;
+					thisTransform.position = temp; 
+				}
+				numberOfPunches = 0;
+				time = 0;
+			}
+			numberOfPunches = 0; 
+			time = 0; 
+		}
+	}
+		
+	}

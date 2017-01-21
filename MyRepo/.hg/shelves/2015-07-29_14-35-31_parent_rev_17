@@ -1,0 +1,685 @@
+diff --git a/Assembly-CSharp-vs.csproj b/Assembly-CSharp-vs.csproj
+--- a/Assembly-CSharp-vs.csproj
++++ b/Assembly-CSharp-vs.csproj
+@@ -5,7 +5,7 @@
+ 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+ 	<ProductVersion>10.0.20506</ProductVersion>
+ 	<SchemaVersion>2.0</SchemaVersion>
+-	<ProjectGuid>{ACFD5048-CA96-8543-6A39-0970108D3AF9}</ProjectGuid>
++	<ProjectGuid>{1A0B6334-FD8B-BD2E-2C47-1BC06CBF2B06}</ProjectGuid>
+ 	<OutputType>Library</OutputType>
+ 	<AppDesignerFolder>Properties</AppDesignerFolder>
+ 	<RootNamespace></RootNamespace>
+@@ -19,7 +19,7 @@
+ 	<DebugType>full</DebugType>
+ 	<Optimize>false</Optimize>
+ 	<OutputPath>Temp\bin\Debug\</OutputPath>
+-	<DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
++	<DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
+ 	<ErrorReport>prompt</ErrorReport>
+ 	<WarningLevel>4</WarningLevel>
+ 	<NoWarn>0169</NoWarn>
+@@ -39,6 +39,6 @@
+ 	<Reference Include="System.Core" />
+ 	<Reference Include="System.Xml.Linq" />
+ 	<Reference Include="UnityEngine">
+-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
++	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+ 	</Reference>
+ 	<Reference Include="UnityEditor">
+@@ -43,6 +43,6 @@
+ 	</Reference>
+ 	<Reference Include="UnityEditor">
+-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
++	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+ 	</Reference>
+   </ItemGroup>
+   <ItemGroup>
+@@ -52,7 +52,7 @@
+      <Compile Include="Assets\Scripts\Punching.cs" />
+      <Compile Include="Assets\Scripts\uiFunctions.cs" />
+      <None Include="Assets\assets list.txt" />
+- <Reference Include="UnityEngine.UI">
+- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
++ <Reference Include="UnityEngine.Analytics">
++ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+  </Reference>
+  <Reference Include="UnityEngine.Networking">
+@@ -57,4 +57,4 @@
+  </Reference>
+  <Reference Include="UnityEngine.Networking">
+- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
++ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+  </Reference>
+@@ -60,5 +60,5 @@
+  </Reference>
+- <Reference Include="UnityEngine.Analytics">
+- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
++ <Reference Include="UnityEngine.UI">
++ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+  </Reference>
+  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+@@ -63,6 +63,6 @@
+  </Reference>
+  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
++ <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+  </Reference>
+   </ItemGroup>
+   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+diff --git a/Assembly-CSharp-vs.csproj.orig b/Assembly-CSharp-vs.csproj.orig
+--- a/Assembly-CSharp-vs.csproj.orig
++++ b/Assembly-CSharp-vs.csproj.orig
+@@ -1,4 +1,3 @@
+-<<<<<<< local
+ <?xml version="1.0" encoding="utf-8"?>
+ <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+@@ -6,81 +5,8 @@
+ 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+ 	<ProductVersion>10.0.20506</ProductVersion>
+ 	<SchemaVersion>2.0</SchemaVersion>
+-	<ProjectGuid>{ACFD5048-CA96-8543-6A39-0970108D3AF9}</ProjectGuid>
+-	<OutputType>Library</OutputType>
+-	<AppDesignerFolder>Properties</AppDesignerFolder>
+-	<RootNamespace></RootNamespace>
+-	<AssemblyName>Assembly-CSharp</AssemblyName>
+-	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+-	<FileAlignment>512</FileAlignment>
+-	<BaseDirectory>Assets</BaseDirectory>
+-  </PropertyGroup>
+-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+-	<DebugSymbols>true</DebugSymbols>
+-	<DebugType>full</DebugType>
+-	<Optimize>false</Optimize>
+-	<OutputPath>Temp\bin\Debug\</OutputPath>
+-	<DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+-	<ErrorReport>prompt</ErrorReport>
+-	<WarningLevel>4</WarningLevel>
+-	<NoWarn>0169</NoWarn>
+-  </PropertyGroup>
+-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+-	<DebugType>pdbonly</DebugType>
+-	<Optimize>true</Optimize>
+-	<OutputPath>Temp\bin\Release\</OutputPath>
+-	<DefineConstants>TRACE</DefineConstants>
+-	<ErrorReport>prompt</ErrorReport>
+-	<WarningLevel>4</WarningLevel>
+-	<NoWarn>0169</NoWarn>
+-  </PropertyGroup>
+-  <ItemGroup>
+-	<Reference Include="System" />
+-    <Reference Include="System.XML" />
+-	<Reference Include="System.Core" />
+-	<Reference Include="System.Xml.Linq" />
+-	<Reference Include="UnityEngine">
+-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+-	</Reference>
+-	<Reference Include="UnityEditor">
+-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+-	</Reference>
+-  </ItemGroup>
+-  <ItemGroup>
+-     <Compile Include="Assets\Scripts\uiFunctions.cs" />
+-     <None Include="Assets\assets list.txt" />
+- <Reference Include="UnityEngine.UI">
+- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+- </Reference>
+- <Reference Include="UnityEngine.Networking">
+- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+- </Reference>
+- <Reference Include="UnityEngine.Analytics">
+- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+- </Reference>
+- <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+- </Reference>
+-  </ItemGroup>
+-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+-	   Other similar extension points exist, see Microsoft.Common.targets.
+-  <Target Name="BeforeBuild">
+-  </Target>
+-  <Target Name="AfterBuild">
+-  </Target>
+-  -->
+-  
+-</Project>
+-=======
+-<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+-  <PropertyGroup>
+-	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+-	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+-	<ProductVersion>10.0.20506</ProductVersion>
+-	<SchemaVersion>2.0</SchemaVersion>
+-	<ProjectGuid>{474B8BF8-E51F-BDC1-5140-A53C3BCDB224}</ProjectGuid>
++<<<<<<< working copy
++	<ProjectGuid>{1A0B6334-FD8B-BD2E-2C47-1BC06CBF2B06}</ProjectGuid>
+ 	<OutputType>Library</OutputType>
+ 	<AppDesignerFolder>Properties</AppDesignerFolder>
+ 	<RootNamespace></RootNamespace>
+@@ -125,6 +51,8 @@
+      <Compile Include="Assets\CharacterProperties.cs" />
+      <Compile Include="Assets\EnemyAI.cs" />
+      <Compile Include="Assets\Punching.cs" />
++     <Compile Include="Assets\Scripts\uiFunctions.cs" />
++     <None Include="Assets\assets list.txt" />
+  <Reference Include="UnityEngine.Analytics">
+  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+  </Reference>
+@@ -148,4 +76,75 @@
+   -->
+   
+ </Project>
+->>>>>>> other
++=======
++	<ProjectGuid>{ACFD5048-CA96-8543-6A39-0970108D3AF9}</ProjectGuid>
++	<OutputType>Library</OutputType>
++	<AppDesignerFolder>Properties</AppDesignerFolder>
++	<RootNamespace></RootNamespace>
++	<AssemblyName>Assembly-CSharp</AssemblyName>
++	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
++	<FileAlignment>512</FileAlignment>
++	<BaseDirectory>Assets</BaseDirectory>
++  </PropertyGroup>
++  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
++	<DebugSymbols>true</DebugSymbols>
++	<DebugType>full</DebugType>
++	<Optimize>false</Optimize>
++	<OutputPath>Temp\bin\Debug\</OutputPath>
++	<DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
++	<ErrorReport>prompt</ErrorReport>
++	<WarningLevel>4</WarningLevel>
++	<NoWarn>0169</NoWarn>
++  </PropertyGroup>
++  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
++	<DebugType>pdbonly</DebugType>
++	<Optimize>true</Optimize>
++	<OutputPath>Temp\bin\Release\</OutputPath>
++	<DefineConstants>TRACE</DefineConstants>
++	<ErrorReport>prompt</ErrorReport>
++	<WarningLevel>4</WarningLevel>
++	<NoWarn>0169</NoWarn>
++  </PropertyGroup>
++  <ItemGroup>
++	<Reference Include="System" />
++    <Reference Include="System.XML" />
++	<Reference Include="System.Core" />
++	<Reference Include="System.Xml.Linq" />
++	<Reference Include="UnityEngine">
++	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
++	</Reference>
++	<Reference Include="UnityEditor">
++	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
++	</Reference>
++  </ItemGroup>
++  <ItemGroup>
++     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
++     <Compile Include="Assets\Scripts\CharacterProperties.cs" />
++     <Compile Include="Assets\Scripts\EnemyAI.cs" />
++     <Compile Include="Assets\Scripts\Punching.cs" />
++     <Compile Include="Assets\Scripts\uiFunctions.cs" />
++     <None Include="Assets\assets list.txt" />
++ <Reference Include="UnityEngine.UI">
++ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
++ </Reference>
++ <Reference Include="UnityEngine.Networking">
++ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
++ </Reference>
++ <Reference Include="UnityEngine.Analytics">
++ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
++ </Reference>
++ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
++ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
++ </Reference>
++  </ItemGroup>
++  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
++  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
++	   Other similar extension points exist, see Microsoft.Common.targets.
++  <Target Name="BeforeBuild">
++  </Target>
++  <Target Name="AfterBuild">
++  </Target>
++  -->
++  
++</Project>
++>>>>>>> destination
+diff --git a/Assembly-CSharp.csproj b/Assembly-CSharp.csproj
+--- a/Assembly-CSharp.csproj
++++ b/Assembly-CSharp.csproj
+@@ -5,7 +5,7 @@
+ 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+ 	<ProductVersion>10.0.20506</ProductVersion>
+ 	<SchemaVersion>2.0</SchemaVersion>
+-	<ProjectGuid>{ACFD5048-CA96-8543-6A39-0970108D3AF9}</ProjectGuid>
++	<ProjectGuid>{1A0B6334-FD8B-BD2E-2C47-1BC06CBF2B06}</ProjectGuid>
+ 	<OutputType>Library</OutputType>
+ 	<AppDesignerFolder>Properties</AppDesignerFolder>
+ 	<RootNamespace></RootNamespace>
+@@ -19,7 +19,7 @@
+ 	<DebugType>full</DebugType>
+ 	<Optimize>false</Optimize>
+ 	<OutputPath>Temp\bin\Debug\</OutputPath>
+-	<DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
++	<DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
+ 	<ErrorReport>prompt</ErrorReport>
+ 	<WarningLevel>4</WarningLevel>
+ 	<NoWarn>0169</NoWarn>
+@@ -39,6 +39,6 @@
+ 	<Reference Include="System.Core" />
+ 	<Reference Include="System.Xml.Linq" />
+ 	<Reference Include="UnityEngine">
+-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
++	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+ 	</Reference>
+ 	<Reference Include="UnityEditor">
+@@ -43,6 +43,6 @@
+ 	</Reference>
+ 	<Reference Include="UnityEditor">
+-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
++	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+ 	</Reference>
+   </ItemGroup>
+   <ItemGroup>
+@@ -52,7 +52,7 @@
+      <Compile Include="Assets\Scripts\Punching.cs" />
+      <Compile Include="Assets\Scripts\uiFunctions.cs" />
+      <None Include="Assets\assets list.txt" />
+- <Reference Include="UnityEngine.UI">
+- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
++ <Reference Include="UnityEngine.Analytics">
++ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+  </Reference>
+  <Reference Include="UnityEngine.Networking">
+@@ -57,4 +57,4 @@
+  </Reference>
+  <Reference Include="UnityEngine.Networking">
+- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
++ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+  </Reference>
+@@ -60,5 +60,5 @@
+  </Reference>
+- <Reference Include="UnityEngine.Analytics">
+- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
++ <Reference Include="UnityEngine.UI">
++ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+  </Reference>
+  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+@@ -63,6 +63,6 @@
+  </Reference>
+  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
++ <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+  </Reference>
+   </ItemGroup>
+   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+diff --git a/Assembly-CSharp.csproj.orig b/Assembly-CSharp.csproj.orig
+--- a/Assembly-CSharp.csproj.orig
++++ b/Assembly-CSharp.csproj.orig
+@@ -5,6 +5,78 @@
+ 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+ 	<ProductVersion>10.0.20506</ProductVersion>
+ 	<SchemaVersion>2.0</SchemaVersion>
++<<<<<<< working copy
++	<ProjectGuid>{1A0B6334-FD8B-BD2E-2C47-1BC06CBF2B06}</ProjectGuid>
++	<OutputType>Library</OutputType>
++	<AppDesignerFolder>Properties</AppDesignerFolder>
++	<RootNamespace></RootNamespace>
++	<AssemblyName>Assembly-CSharp</AssemblyName>
++	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
++	<FileAlignment>512</FileAlignment>
++	<BaseDirectory>Assets</BaseDirectory>
++  </PropertyGroup>
++  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
++	<DebugSymbols>true</DebugSymbols>
++	<DebugType>full</DebugType>
++	<Optimize>false</Optimize>
++	<OutputPath>Temp\bin\Debug\</OutputPath>
++	<DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
++	<ErrorReport>prompt</ErrorReport>
++	<WarningLevel>4</WarningLevel>
++	<NoWarn>0169</NoWarn>
++  </PropertyGroup>
++  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
++	<DebugType>pdbonly</DebugType>
++	<Optimize>true</Optimize>
++	<OutputPath>Temp\bin\Release\</OutputPath>
++	<DefineConstants>TRACE</DefineConstants>
++	<ErrorReport>prompt</ErrorReport>
++	<WarningLevel>4</WarningLevel>
++	<NoWarn>0169</NoWarn>
++  </PropertyGroup>
++  <ItemGroup>
++	<Reference Include="System" />
++    <Reference Include="System.XML" />
++	<Reference Include="System.Core" />
++	<Reference Include="System.Xml.Linq" />
++	<Reference Include="UnityEngine">
++	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
++	</Reference>
++	<Reference Include="UnityEditor">
++	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
++	</Reference>
++  </ItemGroup>
++  <ItemGroup>
++     <Compile Include="Assets\CharacterMovement.cs" />
++     <Compile Include="Assets\CharacterProperties.cs" />
++     <Compile Include="Assets\EnemyAI.cs" />
++     <Compile Include="Assets\Punching.cs" />
++     <Compile Include="Assets\Scripts\uiFunctions.cs" />
++     <None Include="Assets\assets list.txt" />
++ <Reference Include="UnityEngine.Analytics">
++ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
++ </Reference>
++ <Reference Include="UnityEngine.Networking">
++ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
++ </Reference>
++ <Reference Include="UnityEngine.UI">
++ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
++ </Reference>
++ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
++ <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
++ </Reference>
++  </ItemGroup>
++  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
++  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
++	   Other similar extension points exist, see Microsoft.Common.targets.
++  <Target Name="BeforeBuild">
++  </Target>
++  <Target Name="AfterBuild">
++  </Target>
++  -->
++  
++</Project>
++=======
+ 	<ProjectGuid>{ACFD5048-CA96-8543-6A39-0970108D3AF9}</ProjectGuid>
+ 	<OutputType>Library</OutputType>
+ 	<AppDesignerFolder>Properties</AppDesignerFolder>
+@@ -46,6 +118,10 @@
+ 	</Reference>
+   </ItemGroup>
+   <ItemGroup>
++     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
++     <Compile Include="Assets\Scripts\CharacterProperties.cs" />
++     <Compile Include="Assets\Scripts\EnemyAI.cs" />
++     <Compile Include="Assets\Scripts\Punching.cs" />
+      <Compile Include="Assets\Scripts\uiFunctions.cs" />
+      <None Include="Assets\assets list.txt" />
+  <Reference Include="UnityEngine.UI">
+@@ -71,3 +147,4 @@
+   -->
+   
+ </Project>
++>>>>>>> destination
+diff --git a/Assets/Scripts/EnemyAI.cs b/Assets/Scripts/EnemyAI.cs
+--- a/Assets/Scripts/EnemyAI.cs
++++ b/Assets/Scripts/EnemyAI.cs
+@@ -1,9 +1,10 @@
+ ﻿using UnityEngine;
+ using System.Collections;
+ 
++
+ public class EnemyAI : MonoBehaviour
+ {
+ 	public float movSpeed;
+ 	public float padding;
+ 	Transform player; 
+ 	Transform thisTransform;
+@@ -4,11 +5,15 @@
+ public class EnemyAI : MonoBehaviour
+ {
+ 	public float movSpeed;
+ 	public float padding;
+ 	Transform player; 
+ 	Transform thisTransform;
+-
++	private int enemyHealth = 100000;
++	bool gettingPunched = false; 
++	float time = 0f; 
++	int numberOfPunches = 0; 
++	
+ 	void Start() { 
+ 		thisTransform = this.GetComponent<Transform> ();
+ 		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform> (); 
+ 	}
+@@ -11,6 +16,6 @@
+ 	void Start() { 
+ 		thisTransform = this.GetComponent<Transform> ();
+ 		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform> (); 
+ 	}
+-
++	
+ 	void FixedUpdate () {
+@@ -16,7 +21,7 @@
+ 	void FixedUpdate () {
+-		if (thisTransform.position.z < player.position.z-padding) {
+-			Debug.Log ("Lesser");
++		if (thisTransform.position.z < player.position.z-padding &&
++		    Mathf.Abs (this.transform.position.z - player.position.z-padding) > 2) {
+ 			Vector3 temp = thisTransform.position;
+ 			temp.z += movSpeed;
+ 			thisTransform.position = temp;
+ 		}
+@@ -19,12 +24,12 @@
+ 			Vector3 temp = thisTransform.position;
+ 			temp.z += movSpeed;
+ 			thisTransform.position = temp;
+ 		}
+-		else if (thisTransform.position.z > player.position.z+padding) {
+-			Debug.Log ("Greater");
++		else if (thisTransform.position.z > player.position.z+padding &&
++		         Mathf.Abs (this.transform.position.z - player.position.z-padding) > 2) {
+ 			Vector3 temp = thisTransform.position;
+ 			temp.z -= movSpeed;
+ 			thisTransform.position = temp;
+ 		}
+ 	}
+ 
+@@ -25,7 +30,54 @@
+ 			Vector3 temp = thisTransform.position;
+ 			temp.z -= movSpeed;
+ 			thisTransform.position = temp;
+ 		}
+ 	}
+ 
+-}
+\ No newline at end of file
++	void OnTriggerEnter(Collider col)
++	{
++		enemyHealth = enemyHealth - 10; 
++		numberOfPunches++; 
++		Debug.Log ("punched " + numberOfPunches);
++	}
++
++	void Update () {
++		time += Time.deltaTime; 
++		//		if (Mathf.Abs (this.transform.position.z - player.position.z) <= 3) {
++		//			float randomNumber = Random.value * 100f;
++		//			if(randomNumber >= 1 && randomNumber < 2)
++		//			{
++		//				Debug.Log("Jumping");
++		//				Vector3 temp = thisTransform.position;
++		//				temp.y += movSpeed * 2;
++		//				thisTransform.position = temp;
++		//			}
++		//		}
++		if (enemyHealth <= 0) {
++			Destroy (this.gameObject);
++		}
++		if(time > 1f)
++		{
++		   if(numberOfPunches > 3)
++			{
++				Debug.Log ("AI is punched"); 
++				if(this.transform.position.z < player.position.z)
++				{
++					Vector3 temp = thisTransform.position;
++					temp.z -= movSpeed*30; 
++					thisTransform.position = temp;
++				}
++				else 
++				{
++					Vector3 temp = thisTransform.position;
++					temp.z += movSpeed*30;
++					thisTransform.position = temp; 
++				}
++				numberOfPunches = 0;
++				time = 0;
++			}
++			numberOfPunches = 0; 
++			time = 0; 
++		}
++	}
++		
++	}
+\ No newline at end of file
+diff --git a/Assets/Scripts/EnemyAI.cs.meta b/Assets/Scripts/EnemyAI.cs.meta
+--- a/Assets/Scripts/EnemyAI.cs.meta
++++ b/Assets/Scripts/EnemyAI.cs.meta
+@@ -1,5 +1,5 @@
+ fileFormatVersion: 2
+-guid: d1333e95ac3334078b30622dceb60adc
++guid: 166b0a4693bc04d55ad14362a414d83c
+ timeCreated: 1438022698
+ licenseType: Free
+ MonoImporter:
+diff --git a/Assets/Scripts/Punching.cs b/Assets/Scripts/Punching.cs
+--- a/Assets/Scripts/Punching.cs
++++ b/Assets/Scripts/Punching.cs
+@@ -18,7 +18,6 @@
+ 		direction.Normalize();
+ 		Debug.Log("Above the loop");
+ 		while (timer <= time) {
+-			Debug.Log("----");
+ 			transform.position = orgPos + (Mathf.Sin(timer / time * Mathf.PI) + 1.0f) * direction;
+ 			yield return null;
+ 			timer += Time.deltaTime;
+diff --git a/Assets/Test.unity b/Assets/Test.unity
+new file mode 100644
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..87a9068d6ee53bde8c5db265c88198087e7f18e0
+GIT binary patch
+literal 23684
+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
+
